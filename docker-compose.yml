@@ -13,5 +13,3 @@ services:
     cpus: 4
     mem_limit: 4g
     restart: always
-    healthcheck:
-      test: [CMD-SHELL, curl -I localhost:8501 || exit 1]
