@@ -1,0 +1,17 @@
+services:
+  moneyprinterturbo:
+    container_name: moneyprinterturbo
+    image: ghcr.nju.edu.cn/aahl/mptv
+    ports:
+      - 8501:8501
+      - 8502:8080
+    volumes:
+      - .:/app/storage
+    environment:
+      TZ: Asia/Shanghai
+      HF_ENDPOINT: https://hf-mirror.com
+    cpus: 4
+    mem_limit: 4g
+    restart: always
+    healthcheck:
+      test: [CMD-SHELL, curl -I localhost:8501 || exit 1]
