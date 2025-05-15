@@ -16,7 +16,7 @@ RUN set -eux; \
     rm -rf main.zip
 
 WORKDIR /app
-RUN uv venv && uv add -r requirements.txt
+RUN uv init && uv add -r requirements.txt
 ADD run.sh /
 
 HEALTHCHECK --interval=2m CMD curl -I localhost:8501 || exit 1
