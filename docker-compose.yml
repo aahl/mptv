@@ -10,6 +10,7 @@ services:
     environment:
       TZ: Asia/Shanghai
       HF_ENDPOINT: https://hf-mirror.com
+      UV_DEFAULT_INDEX: https://mirrors.ustc.edu.cn/pypi/simple
     cpus: 4
     mem_limit: 4g
     restart: always
