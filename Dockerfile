@@ -9,7 +9,7 @@ RUN set -eux; \
 RUN set -eux; \
     curl -o main.zip -L https://github.com/harry0703/MoneyPrinterTurbo/archive/refs/tags/v$VERSION.zip; \
     unzip -o main.zip -d /tmp; \
-    mv -f /tmp/MoneyPrinterTurbo-main $PYTHONPATH; \
+    mv -f /tmp/MoneyPrinterTurbo-$VERSION $PYTHONPATH; \
     rm -rf main.zip
 WORKDIR /app
 RUN uv venv && uv pip install --no-cache-dir -r requirements.txt
